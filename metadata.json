@@ -1,0 +1,120 @@
+{
+    "view": {
+        "showMetadata": true,
+        "metadata": [
+            "cote",
+            "auteurs",
+            "edition.dates.frantext",
+            "edition.titres.titre",
+            "domaines.genres",
+            "$metadata",
+            "statut_juridique.nicoli"
+        ]
+    },
+    "resources": {},
+    "actions": [
+        {
+            "name": "sort",
+            "settings": {
+                "objects": [
+                    {
+                        "path": "edition.dates.frantext",
+                        "type": "integer",
+                        "order": "ascending"
+                    }
+                ]
+            }
+        }
+    ],
+    "facets": [
+        {
+            "name": "author",
+            "type": "value",
+            "path": "auteurs.nom_complet_usage",
+            "limit": 10,
+            "regex": {
+                "content": "",
+                "modifiers": "cd"
+            }
+        },
+        {
+            "name": "genre",
+            "type": "value",
+            "path": "domaines.genres",
+            "limit": 10,
+            "regex": {
+                "content": "",
+                "modifiers": "cd"
+            }
+        },
+        {
+            "name": "date",
+            "type": "range",
+            "path": "edition.dates.frantext",
+            "gap": 100,
+            "range": {
+                "begin": 800,
+                "end": 2100
+            },
+            "showEmptyValues": false
+        },
+        {
+            "name": "domain",
+            "type": "value",
+            "path": "domaines.domaine",
+            "limit": 10,
+            "regex": {
+                "content": "",
+                "modifiers": "cd"
+            }
+        },
+        {
+            "name": "nature",
+            "type": "value",
+            "path": "domaines.nature",
+            "limit": 10,
+            "regex": {
+                "content": "",
+                "modifiers": "cd"
+            }
+        },
+        {
+            "name": "linguisticFeature",
+            "type": "value",
+            "path": "domaines.specif",
+            "limit": 10,
+            "regex": {
+                "content": "",
+                "modifiers": "cd"
+            }
+        },
+        {
+            "name": "legalStatus",
+            "type": "value",
+            "path": "statut_juridique.nicoli",
+            "limit": 10,
+            "regex": {
+                "content": "",
+                "modifiers": "cd"
+            }
+        },
+        {
+            "name": "gender",
+            "type": "value",
+            "path": "auteurs.genre",
+            "limit": 10,
+            "regex": {
+                "content": "",
+                "modifiers": "cd"
+            }
+        }
+    ],
+    "query": {
+        "input": "metadata() = *"
+    },
+    "range": {
+        "begin": 0,
+        "end": 9999
+    },
+    "corpus": "intégral"
+}
